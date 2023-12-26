@@ -12,3 +12,15 @@ class Queue:
 
     def is_empty(self):
         return len(self.items) == 0
+    
+#question 4
+
+
+
+q = Queue()
+q.enqueue(1)
+q.enqueue(2)
+q.enqueue(3)
+q.enqueue(4)
+q.enqueue(5)
+print("Dequeue : ", q.dequeue())
