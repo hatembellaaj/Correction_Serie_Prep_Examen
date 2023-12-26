@@ -4,15 +4,6 @@ class CircularQueue:
         self.items = [None] * size
         self.front = self.rear = -1
 
-        [None,None,None,None,None]
-        [None,None,None,None,14]
-        [22,None,None,None,14]
-        [22,13,-6,None,14]
-        [22,13,-6,None,None]
-        [None,13,-6,None,None]
-        [None,13,-6,9,None]
-        [None,13,-6,9,20]
-
     def enqueue(self, item):
         if (self.rear + 1) % self.size == self.front:
             print("Queue is full")
