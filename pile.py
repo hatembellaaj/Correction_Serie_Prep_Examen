@@ -21,6 +21,32 @@ def reverse_stack(stack):
     while not stack.is_empty():
         reversed_stack.push(stack.pop())
     return reversed_stack
+#question 5
+def parentheses_balance(expression):
+    stack = Stack()
+    for char in expression:
+        if char in "({[":
+            stack.push(char)
+        elif char in ")}]":
+            if stack.is_empty():
+                return False
+            top = stack.pop()
+            if not is_matching(top, char):
+                return False
+    return stack.is_empty()
+
+def is_matching(opening, closing):
+    return (opening == "(" and closing == ")") or \
+           (opening == "{" and closing == "}") or \
+           (opening == "[" and closing == "]")
+
+# Exemple d'utilisation
+expression = "{[()]}"
+result = parentheses_balance(expression)
+print(f"L'expression {expression} est équilibrée : {result}")
+
+
+
 
 
 
